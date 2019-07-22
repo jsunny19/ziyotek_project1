@@ -1,0 +1,11 @@
+---
+- name: open ssh ports
+  hosts: all
+   remote_user: root
+   become: yes
+
+  tasks:
+  - firewalld:
+      service: sshd
+      permanent: yes
+      state: enabled
